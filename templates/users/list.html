@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+            <div>
+                {% for obj in objs.data  %}
+					<div> <a href="manage?pkval={{ obj.id }}">{{ obj.id }}</a> {{ obj.name }} </div>
+				{% endfor %}
+            </div>
+{% endblock %}

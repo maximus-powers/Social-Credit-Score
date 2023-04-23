@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+            <form action="/submitName" method="POST">
+				<input type="text" name="myname" />
+				<input type="password" name="user_password" />
+				<input type="number" min="0" max="100" name="quantity" />
+				<input type="datetime-local" name="meeting_time" />
+
+				<select name="want_fries">
+					<option value="True">Yes</option>
+					<option value="False">No</option>
+				</select>
+
+				<textarea name="greeting">
+					Hello and welcome to our holiday party!
+				</textarea>
+
+				<input type="submit" value="Submit" />
+			</form>
+{% endblock %}

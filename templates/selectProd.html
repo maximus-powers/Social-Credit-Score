@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+            <div>
+				<form action="/selectShip" method="POST">
+					<select name="product">
+						<option value="3">T-Shirt</option>
+						<option value="4">Hat</option>
+						<option value="5">Socks</option>
+					</select><br>
+					<input type="submit" />
+				</form><br><br>
+				
+				<a href="selectShip?product=3">T-Shirt</a><br>
+				<a href="selectShip?product=4">Hat</a><br>
+				<a href="selectShip?product=5">Socks</a><br>
+			</div>
+{% endblock %}

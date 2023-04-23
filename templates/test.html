@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+            <div>
+                <p style="color:red;">Hello 
+				{% if username %}
+					{{ username }}
+				{% else %}
+					User
+				{% endif %}
+				,</p>
+                <p>Good to meet you.</p>
+                <img src="static/myimage.jpg" />
+            </div>
+{% endblock %}

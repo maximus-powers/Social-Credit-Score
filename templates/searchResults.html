@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% include 'navbar.html' %}
+{% include 'searchBar.html' %}
+
+{% block content %}
+<div class="search-results mt-3">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card mb-1">
+        <div class="card-header bg-dark text-white">
+          <div class="row">
+            <div class="col-2 my-auto">Rank</div>
+            <div class="col-4 my-auto">Name</div>
+            <div class="col-2 my-auto">Class</div>
+            <div class="col-1 my-auto text-center">Love</div>
+            <div class="col-2 text-center my-auto">Rating</div>
+            <div class="col-1 my-auto text-center">Hate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% for result in results %}
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card mb-1">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-2 my-auto">{{ result['rank'] }}</div>
+            <div class="col-4 my-auto">{{ result['name'] }}</div>
+            <div class="col-2 my-auto">{{ result['class'] }}</div>
+            <button class="btn btn-success love-btn col-1"><i class="fas fa-chevron-up"></i></button>
+            <div class="col-2 text-center score my-auto" data-rank="{{ result['rank'] }}">{{ result['score'] }}</div>
+            <button class="btn btn-danger hate-btn col-1"><i class="fas fa-chevron-down"></i></button>
+            <div class="studentID" id="{{ result['studentID'] }}"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card mb-1">
+        <div class="card-body">
+          <form id="studentForm">
+            <div class="form-row">
+              <p class="my-auto col-md-2">Add New:</p>
+              <div class="form-group col-md-2 my-auto">
+                <input type="text" name="fname" placeholder="First Name" class="form-control my-auto">
+              </div>
+              <div class="form-group col-md-2 my-auto">
+                <input type="text" name="lname" placeholder="Last Name" class="form-control my-auto">
+              </div>
+              <div class="form-group col-md-2 my-auto">
+                <input type="text" name="class" placeholder="Class" class="form-control my-auto">
+              </div>
+              <div class="form-group col-md-4 my-auto">
+                <button type="submit" class="btn btn-primary my-auto mx-auto">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+{% endblock %}

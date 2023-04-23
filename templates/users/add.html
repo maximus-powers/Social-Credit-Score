@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+            <div>
+                <form action="/users/manage?action=insert" method="POST">
+                    Name:<br>
+                    <input type="text" name="name" value="{{ obj.data[0].name }}" />
+                    <br>
+
+                    Email:<br>
+                    <input type="text" name="email" value="{{ obj.data[0].email }}" />
+                    <br>
+
+                    Password:<br>
+                    <input type="password" name="password" value="" />
+                    <br>
+
+                    Retype Password:<br>
+                    <input type="password" name="password" value="" />
+                    <br>
+
+                    Role:<br>
+                    <input type="text" name="role" value="{{ obj.data[0].role }}" />
+                    <br>
+                    <br>
+                    <input type="submit" value="Submit" />
+                </form>
+                
+            </div>
+{% endblock %}

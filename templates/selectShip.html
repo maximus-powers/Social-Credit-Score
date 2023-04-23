@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+            <div>
+			product sku: {{ product }}
+			<form action="/confirm" method="POST">
+					<select name="ship">
+						<option value="fast">Fast</option>
+						<option value="slow">Slow</option>
+					</select><br>
+					<!--<input type="hidden" name="product" value="{{ product }}"/>-->
+					<input type="submit" />
+				</form>
+			</div>
+{% endblock %}

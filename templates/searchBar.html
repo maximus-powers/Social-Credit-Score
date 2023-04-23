@@ -1,0 +1,10 @@
+{% block content %}
+    <form action="/search" method="post">
+        <div class="input-group search-bar pt-5">
+            <input type="text" class="form-control" name="search_term" placeholder="Search..." aria-label="Search">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

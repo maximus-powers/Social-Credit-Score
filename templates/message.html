@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+            <div>
+			{% if msg %}
+					{{ msg }}
+				{% else %}
+					Ok
+				{% endif %}
+			</div>
+{% endblock %}
